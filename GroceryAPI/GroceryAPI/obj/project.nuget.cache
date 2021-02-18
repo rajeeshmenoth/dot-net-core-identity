@@ -1,15 +1,36 @@
 {
   "version": 2,
-  "dgSpecHash": "6Q1WFvSD6Sf3tHxJL5J9MgaLOxo6Fkhw7Xki4YOQ/jFwWSusKYXbqtKkIa/Hef6PBC7qBi96sDR5c5rh4hDDHQ==",
+  "dgSpecHash": "+EXGmQPEtcDwfeHKBkG8mMiG9rg0DF3terzi1ZmtCfK5OQ+UBtm77/KcPcpeEhrd9LPRnvc0w2zN7Mi62D0FYg==",
   "success": true,
   "projectFilePath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryAPI\\GroceryAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.0\\microsoft.aspnetcore.http.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.aspnetcore.responsecaching\\2.2.0\\microsoft.aspnetcore.responsecaching.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.aspnetcore.responsecaching.abstractions\\2.2.0\\microsoft.aspnetcore.responsecaching.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\rajee\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\2.2.0\\microsoft.extensions.caching.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.extensions.caching.memory\\2.2.0\\microsoft.extensions.caching.memory.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.2.0\\microsoft.extensions.dependencyinjection.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.2.0\\microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.2.0\\microsoft.extensions.logging.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.extensions.objectpool\\2.2.0\\microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.extensions.options\\2.2.0\\microsoft.extensions.options.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\rajee\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\rajee\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\rajee\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\rajee\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "C:\\Users\\rajee\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+    "C:\\Users\\rajee\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+    "C:\\Users\\rajee\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
