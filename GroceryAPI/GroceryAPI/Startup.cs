@@ -28,6 +28,7 @@ namespace GroceryAPI
         {
 
             services.AddControllers();
+            services.AddResponseCaching();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GroceryAPI", Version = "v1" });
@@ -49,6 +50,8 @@ namespace GroceryAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseResponseCaching();
 
             app.UseEndpoints(endpoints =>
             {

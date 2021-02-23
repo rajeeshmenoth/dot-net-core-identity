@@ -28,6 +28,7 @@ namespace GroceryAPI.Controllers
         };
 
         [HttpGet]
+        [ResponseCache(Duration = 60)]
         public ActionResult GetFruits()
         {
             return Ok(this.frutis);
