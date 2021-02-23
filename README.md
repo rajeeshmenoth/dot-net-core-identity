@@ -7,4 +7,4 @@ Caching is a technique of storing frequently used data or information in a local
 ### Microsoft.AspNetCore.ResponseCaching
 Microsoft AspNetCore currently support only Response Caching. All the caching is happening in proxy server and here we can use Microsoft.AspNetCore.ResponseCaching Nuget package for the Response Caching implementation in ASP.Net Core.
 
-development in-progress.
+Note: The application in development in-progress.
