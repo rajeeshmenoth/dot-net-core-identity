@@ -1,0 +1,9 @@
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\bin\Debug\netstandard2.1\GroceryRepository.deps.json
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\bin\Debug\netstandard2.1\GroceryRepository.dll
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\bin\Debug\netstandard2.1\GroceryRepository.pdb
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\GroceryRepository.csprojAssemblyReference.cache
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\GroceryRepository.AssemblyInfoInputs.cache
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\GroceryRepository.AssemblyInfo.cs
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\GroceryRepository.csproj.CoreCompileInputs.cache
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\GroceryRepository.dll
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\GroceryRepository.pdb

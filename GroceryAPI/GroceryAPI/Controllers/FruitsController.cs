@@ -1,10 +1,7 @@
-﻿using GroceryAPI.Models;
-using Microsoft.AspNetCore.Http;
+﻿using Repository.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Repository.Data;
 
 namespace GroceryAPI.Controllers
 {
@@ -12,26 +9,17 @@ namespace GroceryAPI.Controllers
     [Route("[controller]")]
     public class FruitsController : Controller
     {
-        IList<Fruits> frutis = new List<Fruits> {
-        new Fruits() {
-            Id = 1,
-            Name = "Apple"
-        },
-        new Fruits(){
-            Id = 2,
-            Name = "Orange"
-        },
-        new Fruits(){
-            Id = 2,
-            Name = "Grape"
+        private readonly GroceryDbContext _groceryDbContext;
+        public FruitsController(GroceryDbContext groceryDbContext)
+        {
+            _groceryDbContext = groceryDbContext;
         }
-        };
 
         [HttpGet]
         [ResponseCache(Duration = 60)]
         public ActionResult GetFruits()
         {
-            return Ok(this.frutis);
+            return Ok(_groceryDbContext.GetGroceries());
         }
     }
 }
