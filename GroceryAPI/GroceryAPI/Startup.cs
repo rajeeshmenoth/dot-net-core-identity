@@ -28,10 +28,12 @@ namespace GroceryAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddResponseCaching();
-            services.AddDbContext<GroceryDbContext>(option => option.UseInMemoryDatabase("GroceryApp"));
+            //use in-memory database
+            //services.AddDbContext<GroceryDbContext>(option => option.UseInMemoryDatabase("GroceryApp"));
+            var connString = Configuration["ConnectionStrings:Default"];
+            services.AddDbContext<GroceryDbContext>(option => option.UseSqlServer(connString));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GroceryAPI", Version = "v1" });

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,12 @@ using System.Text;
 
 namespace Repository.Data
 {
-    public class GroceryDbContext : DbContext
+    public class GroceryDbContext : IdentityDbContext
     {
+        public GroceryDbContext()
+        {
+
+        }
         public GroceryDbContext(DbContextOptions<GroceryDbContext> options) : base(options)
         {
             LoadGroceries();
