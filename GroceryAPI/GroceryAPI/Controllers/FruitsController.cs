@@ -6,6 +6,7 @@ using Repository.Data;
 namespace GroceryAPI.Controllers
 {
     [ApiController]
+    [Produces("application/json")]
     [Route("[controller]")]
     public class FruitsController : Controller
     {
