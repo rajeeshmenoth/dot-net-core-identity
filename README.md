@@ -4,7 +4,8 @@ The ASP.Net Core 5.1 template have Open API ( Swagger ) selection option in the 
 # Project Structure
 
 1. Grocery API -> API implementation details.
-2. Repository -> Code First data base implementation using Entity Framework Core ( Version 5.0.3 ).
+2. GroceryAppStore -> Authentication
+3. Repository -> Code First data base implementation using Entity Framework Core ( Version 5.0.3 ).
 
 ## Caching
 Caching is a technique of storing frequently used data or information in a local memory for a certain time period.
