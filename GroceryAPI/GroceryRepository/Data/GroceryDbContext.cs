@@ -16,23 +16,17 @@ namespace Repository.Data
         }
         public GroceryDbContext(DbContextOptions<GroceryDbContext> options) : base(options)
         {
-            LoadGroceries();
-        }
-        public DbSet<Fruits> Fruits { get; set; }
-
-        public void LoadGroceries()
-        {
-            Fruits fruits = new Fruits() { Id = 1, Name = "Apple" };
-            Fruits.Add(fruits);
-            fruits = new Fruits() { Id = 2, Name = "Orange" };
-            Fruits.Add(fruits);
-            fruits = new Fruits() { Id = 3, Name = "Grape" };
-            Fruits.Add(fruits);
+            
         }
 
-        public List<Fruits> GetGroceries()
+        public IList<Fruits> LoadGroceries()
         {
-            return Fruits.Local.ToList<Fruits>();
+            IList<Fruits> fruits = new List<Fruits> {
+            new Fruits() { Id = 1, Name = "Apple" },
+            new Fruits() { Id = 2, Name = "Orange" },
+            new Fruits() { Id = 3, Name = "Grape" }
+        };
+            return fruits;
         }
     }
 }

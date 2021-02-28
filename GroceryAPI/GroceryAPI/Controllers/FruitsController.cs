@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Repository.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GroceryAPI.Controllers
 {
@@ -20,7 +21,7 @@ namespace GroceryAPI.Controllers
         [ResponseCache(Duration = 60)]
         public ActionResult GetFruits()
         {
-            return Ok(_groceryDbContext.GetGroceries());
+            return Ok(_groceryDbContext.LoadGroceries());
         }
     }
 }

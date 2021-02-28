@@ -1,4 +1,5 @@
 ﻿using GroceryStoreApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -9,18 +10,22 @@ namespace GroceryStoreApp.Controllers
     public class IdentityController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
-        public IdentityController(UserManager<IdentityUser> userManager)
+        private readonly SignInManager<IdentityUser> _signInManager;
+        public IdentityController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        public async Task<IActionResult> Signup()
+        public IActionResult Signup()
         {
             var model = new SignupViewModel();
             return View(model);
         }
 
-            [HttpPost]
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Signup(SignupViewModel model)
         {
             if (ModelState.IsValid)
@@ -31,10 +36,10 @@ namespace GroceryStoreApp.Controllers
                     {
 
                         Email = model.Email,
-                        UserName = model.Email
+                        UserName = model.Email,
                     };
 
-                    var result = await _userManager.CreateAsync(user);
+                    var result = await _userManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
                         return RedirectToAction("Signin");
@@ -48,11 +53,36 @@ namespace GroceryStoreApp.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Signin(SignupViewModel model)
+        public IActionResult Signin()
         {
-            return View(model);
+            return View(new SigninViewModel());
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Signin(SigninViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var signedUser = await _userManager.FindByEmailAsync(model.Username);
+                var result = await _signInManager.PasswordSignInAsync(signedUser.Email, model.Password, model.RememberMe, false);
+
+                if (result.Succeeded)
+                {
+                    return Redirect("https://localhost:5001/Fruits/GetFruits");
+                }
+                else
+                {
+                    ModelState.AddModelError("Login", "There is an issue in login attempt");
+                    return View(model);
+                }
+            }
+            else
+            {
+                return View(model);
+            }
+        }
         public async Task<IActionResult> AccessDenied(SignupViewModel model)
         {
             return View(model);

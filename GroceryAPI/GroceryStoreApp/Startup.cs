@@ -26,7 +26,7 @@ namespace GroceryStoreApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            
             var connString = Configuration["ConnectionStrings:Default"];
             services.AddDbContext<GroceryDbContext>(option => option.UseSqlServer(connString));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<GroceryDbContext>();
@@ -41,19 +41,26 @@ namespace GroceryStoreApp
 
             });
 
+            services.Configure<PasswordHasherOptions>(options =>
+    options.CompatibilityMode = PasswordHasherCompatibilityMode.IdentityV2
+);
+
             services.ConfigureApplicationCookie(options => {
 
                 options.LoginPath = "/Identity/Signin";
                 options.AccessDeniedPath = "/Identity/AccessDenied";
+                options.ExpireTimeSpan = TimeSpan.FromHours(5);
 
             });
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, GroceryDbContext context)
         {
             if (env.IsDevelopment())
             {
+                context.Database.EnsureCreated();
                 app.UseDeveloperExceptionPage();
             }
             else
@@ -73,7 +80,7 @@ namespace GroceryStoreApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Identity}/{action=Signin}/{id?}");
             });
         }
     }

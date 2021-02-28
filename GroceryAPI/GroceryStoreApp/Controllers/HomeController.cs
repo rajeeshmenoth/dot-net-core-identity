@@ -9,8 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace GroceryStoreApp.Controllers
-{
-    [Authorize]
+{    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -20,6 +19,7 @@ namespace GroceryStoreApp.Controllers
             _logger = logger;
         }
 
+        
         public IActionResult Index()
         {
             return View();

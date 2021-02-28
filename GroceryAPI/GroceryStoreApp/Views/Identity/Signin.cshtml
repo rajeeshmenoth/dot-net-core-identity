@@ -1,0 +1,27 @@
+﻿@model GroceryStoreApp.Models.SigninViewModel
+
+@{ 
+    ViewData["Title"] = "Signin";
+}
+
+<form asp-controller="identity" asp-action="Signin" method="post">
+    
+    @Html.ValidationSummary()
+
+    <div class="form-group col-4">
+        <label asp-for="Username">Username: </label>
+        <input asp-for="Username" type="text" class="form-control"/>
+    </div>
+    <div class="form-group col-4">
+        <label asp-for="Password">Password: </label>
+        <input asp-for="Password" type="password" class="form-control"/>
+    </div>
+    <div class="form-group col-4">
+        <input asp-for="RememberMe" type="checkbox" />RememberMe
+    </div>
+    <button type="submit" class="btn btn-primary">Sign In</button>
+</form>
+
+<div class="alert alert-info">
+    Create new account <a asp-action="signup">signup</a>
+</div>
