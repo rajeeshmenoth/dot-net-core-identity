@@ -18,6 +18,7 @@ namespace GroceryAPI.Controllers
         }
 
         [HttpGet]
+        [Route("GetFruits")]
         [ResponseCache(Duration = 60)]
         public ActionResult GetFruits()
         {

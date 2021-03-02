@@ -11,10 +11,12 @@ namespace GroceryStoreApp.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        public IdentityController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        private readonly RoleManager<IdentityRole> _roleManager;
+        public IdentityController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         public IActionResult Signup()
@@ -30,6 +32,18 @@ namespace GroceryStoreApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(!await _roleManager.RoleExistsAsync(model.Role))
+                {
+                    var role = new IdentityRole { Name = model.Role };
+                    var response = await _roleManager.CreateAsync(role);
+                    if(!response.Succeeded)
+                    {
+                        var error = response.Errors.Select(x => x.Description);
+                        ModelState.AddModelError("Role", string.Join(",", error));
+                        return BadRequest(model);
+                    }
+                }
+
                 if (await _userManager.FindByEmailAsync(model.Email) == null)
                 {
                     var user = new IdentityUser
@@ -42,6 +56,7 @@ namespace GroceryStoreApp.Controllers
                     var result = await _userManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
+                        await _userManager.AddToRoleAsync(user, model.Role);
                         return RedirectToAction("Signin");
                     }
 
