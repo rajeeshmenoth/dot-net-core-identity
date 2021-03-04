@@ -14,5 +14,8 @@ namespace GroceryStoreApp.Models
 
         [Required]
         public string Role { get; set; } = "User";
+
+        [Required]
+        public string Country { get; set; }
     }
 }

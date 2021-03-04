@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace GroceryStoreApp.Controllers
@@ -56,6 +57,8 @@ namespace GroceryStoreApp.Controllers
                     var result = await _userManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
+                        var userClaim = new Claim("Country", model.Country);
+                        await _userManager.AddClaimAsync(user, userClaim);
                         await _userManager.AddToRoleAsync(user, model.Role);
                         return RedirectToAction("Signin");
                     }
@@ -80,12 +83,20 @@ namespace GroceryStoreApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var signedUser = await _userManager.FindByEmailAsync(model.Username);
-                var result = await _signInManager.PasswordSignInAsync(signedUser.Email, model.Password, model.RememberMe, false);
+                var signinUser = await _userManager.FindByEmailAsync(model.Username);
+                var result = await _signInManager.PasswordSignInAsync(signinUser.Email, model.Password, model.RememberMe, false);
 
                 if (result.Succeeded)
                 {
-                    return Redirect("https://localhost:5001/Fruits/GetFruits");
+                    // Added user policy in middleware
+                    //var userClaims = await _userManager.GetClaimsAsync(signinUser);
+
+                    //if (userClaims.Any(x => x.Type != "Country"))
+                    //{
+                    //    return View(model);
+                    //}
+
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -97,6 +108,12 @@ namespace GroceryStoreApp.Controllers
             {
                 return View(model);
             }
+        }
+
+        public async Task<IActionResult> SignOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Signin");
         }
         public async Task<IActionResult> AccessDenied(SignupViewModel model)
         {
