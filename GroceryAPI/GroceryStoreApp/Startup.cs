@@ -26,11 +26,12 @@ namespace GroceryStoreApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
             var connString = Configuration["ConnectionStrings:Default"];
             services.AddDbContext<GroceryDbContext>(option => option.UseSqlServer(connString));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<GroceryDbContext>();
-            services.Configure<IdentityOptions>(options => {
+            services.Configure<IdentityOptions>(options =>
+            {
 
                 options.Password.RequiredLength = 3;
                 options.Password.RequireDigit = true;
@@ -41,16 +42,25 @@ namespace GroceryStoreApp
 
             });
 
-            services.Configure<PasswordHasherOptions>(options =>
-    options.CompatibilityMode = PasswordHasherCompatibilityMode.IdentityV2
-);
-
-            services.ConfigureApplicationCookie(options => {
+            services.ConfigureApplicationCookie(options =>
+            {
 
                 options.LoginPath = "/Identity/Signin";
                 options.AccessDeniedPath = "/Identity/AccessDenied";
                 options.ExpireTimeSpan = TimeSpan.FromHours(5);
 
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("UserPolicy", p =>
+                {
+                    p.RequireClaim("Country", "india").RequireRole("User");
+                });
+
+                options.AddPolicy("AdminPolicy", p =>
+                {
+                    p.RequireClaim("Country", "All").RequireRole("Admin");
+                });
             });
             services.AddControllersWithViews();
         }
