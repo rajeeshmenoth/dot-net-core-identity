@@ -115,6 +115,37 @@ namespace GroceryStoreApp.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Signin");
         }
+
+        [Authorize]
+        public async Task<IActionResult> MfaConfiguration()
+        {
+            const string provider = "aspnetidentity";
+            var user = await _userManager.GetUserAsync(User);
+            await _userManager.ResetAuthenticatorKeyAsync(user);
+            var token = await _userManager.GetAuthenticatorKeyAsync(user);
+            var qrCodeUrl = $"otpauth://totp/{provider}:{user.Email}?secret={token}&issuer={provider}&digits=6";
+            var mfa = new MFAViewModel { MfaToken = token , QrCodeUrl = qrCodeUrl };
+            return View(mfa);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> MfaConfiguration(MFAViewModel mfa)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.GetUserAsync(User);
+                var result = await _userManager.VerifyTwoFactorTokenAsync(user, _userManager.Options.Tokens.AuthenticatorTokenProvider, mfa.MfaToken);
+                if (result)
+                {
+                    await _userManager.SetTwoFactorEnabledAsync(user,true);
+                }
+                else
+                {
+                    ModelState.AddModelError("Validate", "Your MFA code is invalid");
+                }               
+            }
+            return View(mfa);
+        }
         public async Task<IActionResult> AccessDenied(SignupViewModel model)
         {
             return View(model);

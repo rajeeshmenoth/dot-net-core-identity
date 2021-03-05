@@ -1,0 +1,24 @@
+﻿@model GroceryStoreApp.Models.MFAViewModel
+
+<p>
+    Please enter the code in your authenticator application.
+</p>
+
+<p>
+    @Model.MfaToken
+</p>
+<div id="qrcode"></div>
+<form asp-controller="Identity" asp-action="MfaConfiguration" method="post">
+    <input type="hidden" asp-for="MfaToken" />
+    <div class="form-group">
+        Enter MFA Code:<input type="text" asp-for="MfaCode" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    <script src="~/js/qrcode.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        new QRCode(document.getElementById("qrcode"), "@Model.QrCodeUrl");
+    </script>
+}
