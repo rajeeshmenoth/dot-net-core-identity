@@ -29,7 +29,7 @@ namespace GroceryStoreApp
 
             var connString = Configuration["ConnectionStrings:Default"];
             services.AddDbContext<GroceryDbContext>(option => option.UseSqlServer(connString));
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<GroceryDbContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<GroceryDbContext>().AddDefaultTokenProviders();
             services.Configure<IdentityOptions>(options =>
             {
 
