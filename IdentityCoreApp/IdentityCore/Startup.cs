@@ -54,7 +54,7 @@ namespace IdentityCore
             {
                 options.AddPolicy("UserPolicy", p =>
                 {
-                    p.RequireClaim("Country", "india").RequireRole("User");
+                    p.RequireClaim("Country", "India").RequireRole("User");
                 });
 
                 options.AddPolicy("AdminPolicy", p =>

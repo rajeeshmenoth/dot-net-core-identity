@@ -14,3 +14,4 @@ C:\Users\rajeesh\github\dot-net-core-identity\IdentityCoreApp\Repository\obj\Deb
 C:\Users\rajeesh\github\dot-net-core-identity\IdentityCoreApp\Repository\obj\Debug\netstandard2.1\Repository.csproj.CoreCompileInputs.cache
 C:\Users\rajeesh\github\dot-net-core-identity\IdentityCoreApp\Repository\obj\Debug\netstandard2.1\Repository.dll
 C:\Users\rajeesh\github\dot-net-core-identity\IdentityCoreApp\Repository\obj\Debug\netstandard2.1\Repository.pdb
+C:\Users\rajeesh\github\dot-net-core-identity\IdentityCoreApp\Repository\obj\Debug\netstandard2.1\Repository.csprojAssemblyReference.cache

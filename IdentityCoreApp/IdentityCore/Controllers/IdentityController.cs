@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security;
 using System.Security.Claims;
@@ -25,6 +27,7 @@ namespace IdentityCore.Controllers
         public IActionResult Signup()
         {
             var model = new SignupViewModel();
+            model.Country = "--Select--";
             return View(model);
         }
 
