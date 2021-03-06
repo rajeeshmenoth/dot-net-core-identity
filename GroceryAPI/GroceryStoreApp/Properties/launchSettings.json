@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "GroceryStoreApp": {
+    "IdentityCore": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

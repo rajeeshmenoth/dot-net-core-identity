@@ -1,6 +1,6 @@
 using System;
 
-namespace GroceryStoreApp.Models
+namespace IdentityCore.Models
 {
     public class ErrorViewModel
     {

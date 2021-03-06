@@ -6,4 +6,3 @@ C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\De
 C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\Repository.csproj.CoreCompileInputs.cache
 C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\Repository.dll
 C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\Repository.pdb
-C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryRepository\obj\Debug\netstandard2.1\Repository.csprojAssemblyReference.cache
