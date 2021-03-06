@@ -4,15 +4,24 @@
 
 @if (IsAuthenticated)
 {
+
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Identity" asp-action="SignOut">Logout</a>
+        <label class="nav-link text-dark">Hello <b>@User.Identity.Name.Split('@')[0].Trim()</b></label>
     </li>
-    <li class="nav-item">
-        <label class="nav-link text-dark">Hello <b>@User.Identity.Name</b></label>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Settings
+        </a>
+        <div class="dropdown-menu">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Identity" asp-action="MfaConfiguration">Two Factor Authentication</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Identity" asp-action="SignOut">Logout</a>
+        </div>
     </li>
+
 }
 else
 {
+
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
     </li>
@@ -22,4 +31,5 @@ else
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Identity" asp-action="Signin">Login</a>
     </li>
+
 }

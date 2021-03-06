@@ -1,13 +1,9 @@
-﻿using GroceryStoreApp.Models;
+﻿using IdentityCore.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace GroceryStoreApp.Controllers
+namespace IdentityCore.Controllers
 {
     public class AccountController : Controller
     {

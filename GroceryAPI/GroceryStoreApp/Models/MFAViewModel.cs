@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GroceryStoreApp.Models
+namespace IdentityCore.Models
 {
     public class MFAViewModel
     {

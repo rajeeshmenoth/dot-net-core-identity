@@ -8123,9 +8123,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryStoreApp\\GroceryStoreApp.csproj",
-      "projectName": "GroceryStoreApp",
-      "projectPath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryStoreApp\\GroceryStoreApp.csproj",
+      "projectUniqueName": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryStoreApp\\IdentityCore.csproj",
+      "projectName": "IdentityCore",
+      "projectPath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryStoreApp\\IdentityCore.csproj",
       "packagesPath": "C:\\Users\\rajee\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryStoreApp\\obj\\",
       "projectStyle": "PackageReference",

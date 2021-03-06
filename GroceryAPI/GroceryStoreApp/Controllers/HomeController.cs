@@ -1,4 +1,4 @@
-﻿using GroceryStoreApp.Models;
+﻿using IdentityCore.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GroceryStoreApp.Controllers
+namespace IdentityCore.Controllers
 {    
     public class HomeController : Controller
     {

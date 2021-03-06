@@ -1,12 +1,14 @@
-﻿using GroceryStoreApp.Models;
+﻿using IdentityCore.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.Security;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace GroceryStoreApp.Controllers
+namespace IdentityCore.Controllers
 {
     public class IdentityController : Controller
     {
@@ -85,6 +87,12 @@ namespace GroceryStoreApp.Controllers
             if (ModelState.IsValid)
             {
                 var signinUser = await _userManager.FindByEmailAsync(model.Username);
+
+                if (signinUser == null)
+                {
+                    ModelState.AddModelError("Login", "Invalid login attempt");
+                    return View(model);
+                }
                 var result = await _signInManager.PasswordSignInAsync(signinUser.UserName, model.Password, model.RememberMe, false);
 
                 if (result.Succeeded)
