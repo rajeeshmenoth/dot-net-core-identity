@@ -161,3 +161,4 @@ C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryStoreApp\bin\Debu
 C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryStoreApp\obj\Debug\net5.0\GroceryStoreApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryStoreApp\obj\Debug\net5.0\Razor\Views\Shared\_Identity.cshtml.g.cs
 C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryStoreApp\obj\Debug\net5.0\Razor\Views\Identity\MfaConfiguration.cshtml.g.cs
+C:\Users\rajeesh\github\dot-net-core-web-api\GroceryAPI\GroceryStoreApp\obj\Debug\net5.0\Razor\Views\Account\TwoFactorAuthentication.cshtml.g.cs
