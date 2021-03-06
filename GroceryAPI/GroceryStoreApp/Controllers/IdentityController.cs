@@ -81,6 +81,7 @@ namespace GroceryStoreApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Signin(SigninViewModel model)
         {
+            string returnUrl = "https://localhost:44336/";
             if (ModelState.IsValid)
             {
                 var signinUser = await _userManager.FindByEmailAsync(model.Username);
@@ -100,7 +101,7 @@ namespace GroceryStoreApp.Controllers
                 }
                 if (result.RequiresTwoFactor)
                 {
-                    return RedirectToAction("MfaConfiguration", "Identity");
+                    return RedirectToAction("TwoFactorAuthentication", "Account", new { model.Username, model.RememberMe, returnUrl });
                 }
                 else
                 {
