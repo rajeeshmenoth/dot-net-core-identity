@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jBOLVcagE2BMSBd5QoJwUKy0WqQkHvPPrTqwTlNswIL9Z8bfXFJMPn2lHpKGw3I1dQv5P3QZkipIkFwaRhhtuA==",
+  "dgSpecHash": "jy9xMQU6Ne/wIAf9jsZ+rcdCruB02tTIlkUO1AwYbuQgYvVLUBmkGdN3k94W9xZA9RCItFMTP/HLTnCNWUSuYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryRepository\\Repository.csproj",
+  "projectFilePath": "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rajee\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rajee\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

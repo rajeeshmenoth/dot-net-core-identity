@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryRepository\\Repository.csproj": {}
+    "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryRepository\\Repository.csproj": {
+    "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryRepository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryRepository\\Repository.csproj",
+        "projectPath": "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\rajee\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryRepository\\obj\\",
+        "outputPath": "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rajee\\AppData\\Roaming\\NuGet\\NuGet.Config",

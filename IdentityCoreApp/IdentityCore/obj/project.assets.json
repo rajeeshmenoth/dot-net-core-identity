@@ -8103,8 +8103,8 @@
     },
     "Repository/1.0.0": {
       "type": "project",
-      "path": "../GroceryRepository/Repository.csproj",
-      "msbuildProject": "../GroceryRepository/Repository.csproj"
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8123,11 +8123,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryStoreApp\\IdentityCore.csproj",
+      "projectUniqueName": "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\IdentityCore\\IdentityCore.csproj",
       "projectName": "IdentityCore",
-      "projectPath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryStoreApp\\IdentityCore.csproj",
+      "projectPath": "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\IdentityCore\\IdentityCore.csproj",
       "packagesPath": "C:\\Users\\rajee\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryStoreApp\\obj\\",
+      "outputPath": "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\IdentityCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rajee\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8144,8 +8144,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryRepository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\rajeesh\\github\\dot-net-core-web-api\\GroceryAPI\\GroceryRepository\\Repository.csproj"
+            "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\rajeesh\\github\\dot-net-core-identity\\IdentityCoreApp\\Repository\\Repository.csproj"
             }
           }
         }
