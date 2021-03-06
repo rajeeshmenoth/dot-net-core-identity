@@ -84,7 +84,7 @@ namespace GroceryStoreApp.Controllers
             if (ModelState.IsValid)
             {
                 var signinUser = await _userManager.FindByEmailAsync(model.Username);
-                var result = await _signInManager.PasswordSignInAsync(signinUser.Email, model.Password, model.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(signinUser.UserName, model.Password, model.RememberMe, false);
 
                 if (result.Succeeded)
                 {
@@ -97,6 +97,10 @@ namespace GroceryStoreApp.Controllers
                     //}
 
                     return RedirectToAction("Index", "Home");
+                }
+                if (result.RequiresTwoFactor)
+                {
+                    return RedirectToAction("MfaConfiguration", "Identity");
                 }
                 else
                 {
@@ -129,15 +133,17 @@ namespace GroceryStoreApp.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> MfaConfiguration(MFAViewModel mfa)
         {
             if (ModelState.IsValid)
             {
                 var user = await _userManager.GetUserAsync(User);
-                var result = await _userManager.VerifyTwoFactorTokenAsync(user, _userManager.Options.Tokens.AuthenticatorTokenProvider, mfa.MfaToken);
+                var result = await _userManager.VerifyTwoFactorTokenAsync(user, _userManager.Options.Tokens.AuthenticatorTokenProvider, mfa.MfaCode);
                 if (result)
                 {
-                    await _userManager.SetTwoFactorEnabledAsync(user,true);
+                    var auth = await _userManager.SetTwoFactorEnabledAsync(user,true);
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
